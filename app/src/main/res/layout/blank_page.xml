@@ -1,0 +1,16 @@
+<android.support.v4.view.ViewPager
+    android:id="@+id/mypager"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/AppTheme"
+    >
+
+    <android.support.v4.view.PagerTitleStrip
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+    android:background="@color/colorOrange"
+        >
+
+    </android.support.v4.view.PagerTitleStrip>
+</android.support.v4.view.ViewPager>
