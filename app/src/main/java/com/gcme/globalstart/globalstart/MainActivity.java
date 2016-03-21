@@ -13,11 +13,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
-import com.gcme.globalstart.globalstart.Do.Do_Fragment;
-import com.gcme.globalstart.globalstart.Goal.Goal_Fragment;
-import com.gcme.globalstart.globalstart.Gods_heart.God_Heart_Fragment;
-import com.gcme.globalstart.globalstart.Intro.IntroFragment;
-import com.gcme.globalstart.globalstart.Learn.Learn_Fragment;
+import com.gcme.globalstart.globalstart.News_Feed.NewsFeed_Fragment;
+import com.gcme.globalstart.globalstart.Testimony.Testimony_Fragment;
+import com.gcme.globalstart.globalstart.magazine.Do.Do_Fragment;
+import com.gcme.globalstart.globalstart.magazine.Goal.Goal_Fragment;
+import com.gcme.globalstart.globalstart.magazine.Gods_heart.God_Heart_Fragment;
+import com.gcme.globalstart.globalstart.magazine.Intro.IntroFragment;
+import com.gcme.globalstart.globalstart.magazine.Learn.Learn_Fragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,13 +90,13 @@ public class MainActivity extends AppCompatActivity{
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new IntroFragment(), "News Feed");
+        adapter.addFragment(new NewsFeed_Fragment(), "News Feed");
         adapter.addFragment(new IntroFragment(), "Intro");
         adapter.addFragment(new God_Heart_Fragment(),"God`s Heart");
         adapter.addFragment(new Learn_Fragment(), "Learn");
         adapter.addFragment(new Do_Fragment(), "Do");
         adapter.addFragment(new Goal_Fragment(), "Goal");
-        //adapter.addFragment(new OneFragment(), "Testimony");
+        adapter.addFragment(new Testimony_Fragment(), "Testimony");
         viewPager.setAdapter(adapter);
 
     }
