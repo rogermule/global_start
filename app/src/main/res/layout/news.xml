@@ -65,6 +65,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/txt_news_detail_title"
                     android:autoLink="web|all"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -72,13 +73,17 @@
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
+                    android:background="@color/colorBlue"
+                    android:textColor="#fff"
+                    android:textSize="30dp"
                     android:text="News Title"
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
                 <TextView
-                    android:id="@+id/description"
+                    android:id="@+id/txt_news_detail_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
+                    android:textSize="17dp"
                     android:text="@string/lorem_ipsum"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 

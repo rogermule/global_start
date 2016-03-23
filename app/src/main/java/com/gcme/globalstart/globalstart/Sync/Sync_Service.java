@@ -8,7 +8,6 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.telephony.TelephonyManager;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.gcme.globalstart.globalstart.DataTypes.News_Data;
 import com.gcme.globalstart.globalstart.Database.MyDatabase;
@@ -42,17 +41,17 @@ public class Sync_Service extends Service {
 
     @Override
     public void onCreate() {
-        Toast.makeText(this,"Service Started---->:",Toast.LENGTH_LONG).show();
+        //Toast.makeText(this,"Service Started---->:",Toast.LENGTH_LONG).show();
         super.onCreate();
         myDatabase = new MyDatabase(this);
         myParser = new JSONParser();
         Tele = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         myContext = this;
         imageDownloader = new ImageDownloader(myContext,"");
-        new Make_Service().execute();
+        //new Make_Service().execute();
         myFileManager = new FileManager();
-        Log.i("Sync_Service", "Service Started");
-        Toast.makeText(this,"Sync Service Started:",Toast.LENGTH_LONG).show();
+        //Log.i("Sync_Service", "Service Started");
+        //Toast.makeText(this,"Sync Service Started:",Toast.LENGTH_LONG).show();
     }
     public class Make_Service extends AsyncTask<String,String,String>{
         @Override

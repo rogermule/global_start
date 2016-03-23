@@ -18,6 +18,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.gcme.globalstart.globalstart.DataTypes.News_Data;
+import com.gcme.globalstart.globalstart.News_Detail;
 import com.gcme.globalstart.globalstart.R;
 
 import java.util.ArrayList;
@@ -56,15 +57,28 @@ public class News_List extends Fragment {
         //sample objects
         d = new News_Data();
         d.setTitle("Global start has been Launched");
-        d.setContent("The highly anticipated mobile based system has been officially released. The app is believed to change the way teenager evangelism is accomplished and helps to equip the youth, church and every one to do a strong teenager evangelism.");
-        d.setDescription("");
+        d.setContent("The highly anticipated mobile based system has been officially released. The app is believed to " +
+                "change the way teenager evangelism is accomplished and helps to equip the youth, church and every one to do a strong teenager evangelism.");
+        d.setDescription("The highly anticipated mobile based system has been officially released. The app is believed to change the " +
+                "way teenager evangelism is accomplished and helps to equip the youth, church and every one to do a strong teenager " +
+                "evangelism. \n \n The highly anticipated mobile based system has been officially released. The app is believed to change the way " +
+                "teenager evangelism is accomplished and helps to equip the youth, church and every one to do a strong teenager evangelism." +
+                "The highly anticipated mobile based system has been officially released. The app is believed to change the way teenager evangelism " +
+                "is accomplished and helps to equip the youth, church and every one to do a strong teenager evangelism." +
+                "\n" +
+                " \n" +
+                " The highly anticipated mobile based system has been officially released. The app is believed to change the way" +
+                "teenager evangelism is accomplished and helps to equip the youth, church and every one to do a strong teenager evangelism." +
+                "The highly anticipated mobile based system has been officially released. The app is believed to change the way teenager evangelism" +
+                "is accomplished and helps to equip the youth, church and every one to do a strong teenager evangelism.");
         d.setId(1);
         d.setNewsID(1);
         d.setPublished_date("1/3/2016");
 
         disciplesList.add(d);
         disciplesList.add(d);
-
+        disciplesList.add(d);
+        disciplesList.add(d);
 
 
         lv_news.setAdapter(new MyDiscipleListAdapter(getContext(), (ArrayList<News_Data>) disciplesList));
@@ -116,6 +130,7 @@ public class News_List extends Fragment {
             final String title = news_list.get(position).getTitle();
             final String content = news_list.get(position).getContent();
             final String date = news_list.get(position).getPublished_date();
+            final String description = news_list.get(position).getDescription();
             final String image = news_list.get(position).getImage();
 
             news_title.setText(title);
@@ -125,12 +140,13 @@ public class News_List extends Fragment {
             convertView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(),News_More_Detail.class);
+                    Intent intent = new Intent(getActivity(),News_Detail.class);
                     Bundle b = new Bundle();
                     b.putString("title", title);
                     b.putString("content", content);
                     b.putString("date", date);
-
+                    b.putString("desc", description);
+                    intent.putExtras(b);
                     startActivity(intent);
                 }
             });

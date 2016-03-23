@@ -49,6 +49,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
+                        android:textSize="16dp"
                         android:textColor="#424242"
                         android:text="For IT, past results are every bit as that’s why for more than a decade, Red Hat® solutions have been trusted in the world’s most rigorous datacenters...."
                         android:id="@+id/txt_news_content" />
@@ -58,7 +59,7 @@
                     android:layout_weight="5"
                     android:layout_height="match_parent">
                     <ImageView
-                        android:layout_marginTop="3dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginBottom="3dp"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"

@@ -7,24 +7,35 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 
-public class MainActivity2 extends AppCompatActivity {
+public class News_Detail extends AppCompatActivity {
     CollapsingToolbarLayout collapsingToolbarLayout;
     ImageView image;
+    TextView tv_title, tv_content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.news);
-
         image = (ImageView) findViewById(R.id.image);
         image.setImageResource(R.drawable.pic2);
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        tv_title = (TextView) findViewById(R.id.txt_news_detail_title);
+        tv_content = (TextView) findViewById(R.id.txt_news_detail_content);
+
+        String title = getIntent().getExtras().getString("title");
+        String content = getIntent().getExtras().getString("desc");
 
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        collapsingToolbarLayout.setTitle("News");
+        collapsingToolbarLayout.setTitle(title);
         collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(android.R.color.transparent));
+
+        tv_title.setText(title);
+        tv_content.setText(content);
 
     }
 

@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.gcme.globalstart.globalstart.MainActivity2;
+import com.gcme.globalstart.globalstart.News_Detail;
 import com.gcme.globalstart.globalstart.R;
 
 public class IntroFragment extends Fragment {
@@ -40,7 +40,7 @@ public class IntroFragment extends Fragment {
          newsBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MainActivity2.class);
+                Intent intent = new Intent(getActivity(), News_Detail.class);
                 startActivity(intent);
             }
         });

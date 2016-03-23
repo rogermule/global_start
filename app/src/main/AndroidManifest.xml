@@ -18,7 +18,7 @@
         android:name=".Global_Start">
 
         <activity
-            android:name=".MainActivity2"
+            android:name=".News_Detail"
             android:label="@string/news"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

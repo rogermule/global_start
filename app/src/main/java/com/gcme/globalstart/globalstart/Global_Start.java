@@ -2,13 +2,10 @@ package com.gcme.globalstart.globalstart;
 
 import android.app.Application;
 import android.content.ContentValues;
-import android.content.Intent;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.gcme.globalstart.globalstart.Database.MyDatabase;
 import com.gcme.globalstart.globalstart.News_Feed.NewsFeed_Fragment;
-import com.gcme.globalstart.globalstart.Sync.Sync_Service;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,9 +28,9 @@ public class Global_Start extends Application {
     public void onCreate() {
         super.onCreate();
         myDatabase = new MyDatabase(this);
-        Intent intent = new Intent(this,Sync_Service.class);
-        startService(intent);
-        Toast.makeText(this,"Service Started:",Toast.LENGTH_LONG).show();
+        //Intent intent = new Intent(this,Sync_Service.class);
+        //startService(intent);
+        //Toast.makeText(this,"Service Started:",Toast.LENGTH_LONG).show();
     }
     public static void addNew_NewsFeed(JSONArray NOTIS) throws JSONException {
         boolean is_added = false;
