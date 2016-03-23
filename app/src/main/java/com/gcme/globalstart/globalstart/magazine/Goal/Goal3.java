@@ -27,7 +27,7 @@ public class Goal3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Inflate the splash for this fragment
         View view = inflater.inflate(R.layout.know_3, container, false);
 
         readmore1 = (Button) view.findViewById(R.id.goal_sowing_with_school);

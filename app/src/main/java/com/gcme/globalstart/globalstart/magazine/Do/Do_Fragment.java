@@ -26,7 +26,7 @@ public class Do_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Inflate the splash for this fragment
         View view = inflater.inflate(R.layout.blank_page, container, false);
         myPager = (ViewPager) view.findViewById(R.id.mypager);
         FragmentManager manager = getChildFragmentManager();

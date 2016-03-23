@@ -22,7 +22,7 @@ public class Heart2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Inflate the splash for this fragment
         View view = inflater.inflate(R.layout.godheart_2, container, false);
         return view;
 

@@ -13,7 +13,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
-import com.gcme.globalstart.globalstart.News_Feed.NewsFeed_Fragment;
+import com.gcme.globalstart.globalstart.Menu_Options.ContactUsOptions;
+import com.gcme.globalstart.globalstart.Menu_Options.MoreOptions;
+import com.gcme.globalstart.globalstart.News_Fee_2.News_List;
 import com.gcme.globalstart.globalstart.Testimony.Testimony_Fragment;
 import com.gcme.globalstart.globalstart.magazine.Do.Do_Fragment;
 import com.gcme.globalstart.globalstart.magazine.Goal.Goal_Fragment;
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity{
 
 
         image = (ImageView) findViewById(R.id.image);
-        image.setImageResource(R.drawable.pic2);
+        image.setImageResource(R.drawable.global_head);
         imagestate = 1;
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -57,11 +59,11 @@ public class MainActivity extends AppCompatActivity{
 
     public static void setImage(){
         if(imagestate == 0){
-            image.setImageResource(R.drawable.pic2);
+            image.setImageResource(R.drawable.global_head);
             imagestate = 1;
         }
         else if(imagestate == 1){
-            image.setImageResource(R.drawable.pic);
+            image.setImageResource(R.drawable.global);
             imagestate = 0;
         }
     }
@@ -81,7 +83,30 @@ public class MainActivity extends AppCompatActivity{
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+
+        if(id == R.id.action_about){
+                MoreOptions more = new MoreOptions();
+                Bundle b = new Bundle();
+                b.putString("Title","About Us");
+                b.putString("Detail", "This App is a global start application which aims to bring about a chhnage in the way the society acts and walks in his way which Christ. \n");
+                more.setArguments(b);
+                more.show(getFragmentManager(),"About us");
+            return true;
+        }
+        else if(id == R.id.action_contact){
+            ContactUsOptions more = new ContactUsOptions();
+            Bundle b = new Bundle();
+            b.putString("Title","About Us");
+            b.putString("Detail", "This App is a global start application which aims to bring about a chhnage in the way the society acts and walks in his way which Christ. \n");
+            more.setArguments(b);
+            more.show(getFragmentManager(),"About us");
+            return true;
+        }
+        else if(id == R.id.menu_item_share){
+
+        }
+        else if( id == R.id.action_share){
+
             return true;
         }
 
@@ -90,7 +115,7 @@ public class MainActivity extends AppCompatActivity{
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new NewsFeed_Fragment(), "News Feed");
+        adapter.addFragment(new News_List(), "News Feed");
         adapter.addFragment(new IntroFragment(), "Intro");
         adapter.addFragment(new God_Heart_Fragment(),"God`s Heart");
         adapter.addFragment(new Learn_Fragment(), "Learn");
@@ -129,4 +154,5 @@ public class MainActivity extends AppCompatActivity{
             return mFragmentTitleList.get(position);
         }
     }
+
 }
