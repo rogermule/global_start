@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.gcme.globalstart.globalstart.DataTypes.News_Data;
 import com.gcme.globalstart.globalstart.News_Detail;
 import com.gcme.globalstart.globalstart.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ public class News_List extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_news_list, container, false);
-        
+
         lv_news = (ListView) view.findViewById(R.id.ls_news_list);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             lv_news.setNestedScrollingEnabled(true);
@@ -126,6 +127,7 @@ public class News_List extends Fragment {
             TextView news_content = (TextView)convertView.findViewById(R.id.txt_news_content);
             TextView news_pub_date = (TextView)convertView.findViewById(R.id.txt_news_pub_date);
 
+            Picasso.with(getActivity()).load("http://www.flooringvillage.co.uk/ekmps/shops/flooringvillage/images/request-a-sample--547-p.jpg").into(iv_newsImage);
 
             final String title = news_list.get(position).getTitle();
             final String content = news_list.get(position).getContent();
